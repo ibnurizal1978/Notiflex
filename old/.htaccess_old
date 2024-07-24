@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteCond %{THE_REQUEST} \.(?:html|php)\s [NC]
+RewriteCond %{REQUEST_URI} !=/http://error404.html
+RewriteRule ^ - [R=404,L]
